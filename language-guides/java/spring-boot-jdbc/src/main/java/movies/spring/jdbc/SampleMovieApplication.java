@@ -24,8 +24,9 @@ import java.util.*;
 @ComponentScan
 @RestController("/")
 public class SampleMovieApplication extends WebMvcConfigurerAdapter {
-
+    
     public static final String NEO4J_URL = System.getProperty("NEO4J_URL","jdbc:neo4j://localhost:7474");
+    // neo4j 2.2 requires username and password
     public static final String NEO4J_USR = System.getProperty("NEO4J_USR","neo4j");
     public static final String NEO4J_PWD = System.getProperty("NEO4J_PWD","neo4j");
 
