@@ -26,9 +26,9 @@ import java.util.*;
 public class SampleMovieApplication extends WebMvcConfigurerAdapter {
     
     public static final String NEO4J_URL = System.getProperty("NEO4J_URL","jdbc:neo4j://localhost:7474");
-    // neo4j 2.2 requires username and password
-    public static final String NEO4J_USR = System.getProperty("NEO4J_USR","neo4j");
-    public static final String NEO4J_PWD = System.getProperty("NEO4J_PWD","neo4j");
+    // neo4j 2.2 requires username and password. Default values are neo4j/neo4j
+    public static final String NEO4J_USER = System.getProperty("NEO4J_USER","neo4j");
+    public static final String NEO4J_PASSWORD = System.getProperty("NEO4J_PASSWORD","neo4j");
 
     public static final RowMapper<Movie> MOVIE_ROW_MAPPER = new RowMapper<Movie>() {
         public Movie mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -132,7 +132,7 @@ public class SampleMovieApplication extends WebMvcConfigurerAdapter {
 
     @Bean
     public DataSource dataSource() {
-        return new DriverManagerDataSource(NEO4J_URL, NEO4J_USR, NEO4J_PWD);
+        return new DriverManagerDataSource(NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD);
     }
 
 }
