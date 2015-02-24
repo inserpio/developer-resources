@@ -54,6 +54,7 @@ include::pom.xml[tags=dependencies]
 For the backend we use a Spring-WebMVC `@RestController` whose service methods access an autowired `JdbcTemplate`.
 
 Currently we get the `NEO4J_URL` from a system property, but it should be equally simple to get it from an entry in `application.properties`.
+
 Starting from Neo4j 2.2 _username_ and _password_ are *mandatory* for authenticating to the database, that's why we also get these two other system properties: `NEO4J_USR` and `NEO4J_PWD`.
 
 Using the JDBC-template with Cypher is easy. 
